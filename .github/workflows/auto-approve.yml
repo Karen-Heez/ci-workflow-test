@@ -8,8 +8,6 @@ jobs:
     name: Auto-Approve a PR by dependabot
     runs-on: ubuntu-latest
     steps:
-      - name: Auto approve
-        uses: cognitedata/auto-approve-dependabot-action@v3.0.1
-        if: github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]'
+      - uses: hmarr/auto-approve-action@v3
         with:
           github-token: ${{ secrets.CI_TOKEN }}

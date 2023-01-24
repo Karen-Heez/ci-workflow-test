@@ -8,6 +8,6 @@ jobs:
     name: Auto-Approve a PR by dependabot
     runs-on: ubuntu-latest
     steps:
-      - uses: hmarr/auto-approve-action@v3
+      - uses: juliangruber/approve-pull-request-action@v1
         with:
           github-token: ${{ secrets.CI_TOKEN }}

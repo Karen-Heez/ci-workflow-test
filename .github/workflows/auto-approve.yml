@@ -1,13 +1,10 @@
-name: Auto approve PRs by dependabot
-
-# Trigger the workflow on pull request
+name: Auto approve
 on: pull_request_target
 
 jobs:
-  autoapprove:
-    name: Auto-Approve a PR by dependabot
+  build:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
     steps:
-      - uses: juliangruber/approve-pull-request-action@v1
-        with:
-          github-token: ${{ secrets.CI_TOKEN }}
+      - uses: hmarr/auto-approve-action@v3
